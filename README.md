@@ -4,13 +4,13 @@
 It read the csv data and converted into delta format, but indeed we dont have the delta format file. instead it will convert the csv file into parquet file under opentable format
 
 In delta format it contains 2 files.
-1.Parquet file.
-2.Transaction files aka (_delata_log) basically a folder concept.
+1. Parquet file.
+2. Transaction files aka (_delta_log) basically a folder concept.
 
 The _delata_log folder contains the json files, schema checkpoint.
-1.Basically its keep on tracking the changes you are performing on the file ( basically your transactions).
-2.Every time you make the changes, it will keep on adding the new json files. And each time it will not store the state of the table.
-3.If you want the latest state of the table, then it will read all the previous json files.
+1. Basically its keep on tracking the changes you are performing on the file ( basically your transactions).
+2. Every time you make the changes, it will keep on adding the new json files. And each time it will not store the state of the table.
+3. If you want the latest state of the table, then it will read all the previous json files.
 
 ## Note: 
     
