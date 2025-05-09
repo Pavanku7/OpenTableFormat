@@ -1,7 +1,7 @@
 # OpenTableFormat
 ## Behind the scene of Opentable format
 
-It read the csv data and converted into delta format, but indeed we dont have the delta format file. instead it will convert the csv file into parquet file under opentable format
+It read the csv/xlsx/json any format data and converted into delta format, but indeed we dont have the delta format file. instead it will convert the any format file into parquet file under opentable format
 
 In delta format it contains 2 files.
 1. Parquet file.
@@ -14,5 +14,5 @@ The _delata_log folder contains the json files, schema checkpoint.
 
 ## Note: 
     
-If there are 100 transaction,whether we need to read all the 100 json files? No, Every 10th json files its created in delta_log it will maintain the history of the past 9 previous json file in the 10th json file. So you need the current state then it will read the 10th + 1 file (i.e 11th file)
+If there are 100 transaction, whether we need to read all the 100 json files? No, Every 10th json files its created in delta_log it will maintain the history of the past 9 previous json file in the 10th json file. So you need the current state then it will read the 10th + 1 file (i.e 11th file)
 
